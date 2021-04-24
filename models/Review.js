@@ -1,7 +1,7 @@
 
 const mongoose = require('mongoose');
 
-const BookSchema = new mongoose.Schema({
+const ReviewSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -29,4 +29,4 @@ const BookSchema = new mongoose.Schema({
   }
 });
 
-module.exports = Book = mongoose.model('book', BookSchema);
+module.exports = Review = mongoose.model('review', ReviewSchema);

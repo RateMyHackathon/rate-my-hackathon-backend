@@ -1,16 +1,25 @@
 const express = require('express');
 const connectDB = require('./config/db');
+var cors = require('cors');
+
+// routes
+const reviews = require('./routes/api/reviews');
 
 const app = express();
-
-// Postman
-const books = require('./routes/api/books');
-app.use('/api/books', books);
 
 // Connect Database
 connectDB();
 
+// cors
+app.use(cors({ origin: true, credentials: true }));
+
+// Init Middleware
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.send('Hello world!'));
+
+// use Routes
+app.use('/api/reviews', reviews);
 
 const port = process.env.PORT || 8082;
 
