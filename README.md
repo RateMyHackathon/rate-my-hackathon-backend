@@ -1,1 +1,1 @@
-# rate-my-hackathon
+# rate-my-hackathon-backend
