@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-To run the client:
+To run the server:
 
 1. `npm install`
 2. `npm run app`
