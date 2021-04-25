@@ -20,22 +20,26 @@ const ReviewSchema = new mongoose.Schema({
 });
   
 const HackathonSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    description: {
-        type: String,
-        required: true
-    },
-    reviews: {
-        type: [ReviewSchema],
-        default: []
-    }, 
-    date_updated: {
-        type: Date,
-        default: Date.now
-    },
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  reviews: {
+    type: [ReviewSchema],
+    default: []
+  }, 
+  img: {
+    type: String,
+    data: Buffer
+  },
+  date_updated: {
+    type: Date,
+    default: Date.now
+  },
 });
 
 module.exports = Hackathon = mongoose.model('hackathon', HackathonSchema);
