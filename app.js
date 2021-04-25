@@ -3,7 +3,7 @@ const connectDB = require('./config/db');
 var cors = require('cors');
 
 // routes
-const reviews = require('./routes/api/reviews');
+const hackathons = require('./routes/api/hackathons');
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('Hello world!'));
 
 // use Routes
-app.use('/api/reviews', reviews);
+app.use('/api/hackathons', hackathons);
 
 const port = process.env.PORT || 8082;
 
