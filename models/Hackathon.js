@@ -10,7 +10,7 @@ const ReviewSchema = new mongoose.Schema({
       required: true
     },
     rating: {
-      type: String,
+      type: Number,
       required: true
     },
     date_updated: {
@@ -33,8 +33,7 @@ const HackathonSchema = new mongoose.Schema({
     default: []
   }, 
   img: {
-    type: String,
-    data: Buffer
+    type: String
   },
   date_updated: {
     type: Date,
