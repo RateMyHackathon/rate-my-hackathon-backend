@@ -32,8 +32,13 @@ const HackathonSchema = new mongoose.Schema({
     type: [ReviewSchema],
     default: []
   }, 
-  img: {
-    type: String
+  url: {
+    type: String,
+    default: ""
+  },
+  themes: {
+    type: [String],
+    default: []
   },
   date_updated: {
     type: Date,
