@@ -2,10 +2,6 @@
 const mongoose = require('mongoose');
 
 const ReviewSchema = new mongoose.Schema({
-    title: {
-      type: String,
-      required: true
-    },
     description: {
       type: String,
       required: true
@@ -21,6 +17,14 @@ const ReviewSchema = new mongoose.Schema({
     tags: {
       type: [String],
       default: []
+    },
+    numUp: {
+      type: Number,
+      required: true
+    },
+    numDown: {
+      type: Number,
+      required: true
     }
 });
   
