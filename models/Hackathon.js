@@ -19,7 +19,8 @@ const ReviewSchema = new mongoose.Schema({
       default: Date.now
     },
     tags: {
-      type: [String]
+      type: [String],
+      default: []
     }
 });
   
