@@ -5,10 +5,12 @@ const router = express.Router();
 const Hackathon = require("../../models/Hackathon");
 
 // @route GET api/hackathons/search
-// @description Returns hackathons whose names contain some query
+// @description Returns hackathons whose names contain some term
 // @access Public
 router.get("/search", (req, res) => {
-  Hackathon.find({name : {$regex : String(req.body.query), $options: 'i'}})
+  let q = req.query.q
+  console.log(q)
+  Hackathon.find({name : {$regex : String(q), $options: 'i'}})
     .then((hackathons) => res.json(hackathons))
     .catch((err) =>
       res.status(404).json({ nohackathonsfound: "No Hackathons found" })
