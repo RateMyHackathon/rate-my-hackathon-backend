@@ -28,7 +28,6 @@ const ReviewSchema = new mongoose.Schema({
   },
   dateUpdated: {
     type: Date,
-    default: Date.now,
   },
 //   author: {
 //     type: UserSchema
