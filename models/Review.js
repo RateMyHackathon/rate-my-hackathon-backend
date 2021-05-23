@@ -23,6 +23,9 @@ const ReviewSchema = new mongoose.Schema({
     default: 0,
     required: true,
   },
+  dateAdded: {
+    type: Date,
+  },
   dateUpdated: {
     type: Date,
     default: Date.now,
