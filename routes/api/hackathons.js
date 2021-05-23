@@ -9,7 +9,6 @@ const Hackathon = require("../../models/Hackathon");
 // @access Public
 router.get("/search", (req, res) => {
   let q = req.query.q
-  console.log(q)
   Hackathon.find({name : {$regex : String(q), $options: 'i'}})
     .then((hackathons) => res.json(hackathons))
     .catch((err) =>
@@ -44,7 +43,7 @@ router.get("/:id", (req, res) => {
     );
 });
 
-// @route GET api/hackathons
+// @route POST api/hackathons
 // @description Add/save hackathon
 // @access Public
 router.post("/", (req, res) => {
@@ -55,7 +54,7 @@ router.post("/", (req, res) => {
     );
 });
 
-// @route GET api/hackathons/:id
+// @route PUT api/hackathons/:id
 // @description Update hackathon
 // @access Public
 router.put("/:id", (req, res) => {
@@ -66,7 +65,7 @@ router.put("/:id", (req, res) => {
     );
 });
 
-// @route GET api/hackathons/:id
+// @route DELETE api/hackathons/:id
 // @description Delete hackathon by id
 // @access Public
 router.delete("/:id", (req, res) => {

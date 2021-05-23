@@ -1,58 +1,69 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ReviewSchema = new mongoose.Schema({
-    description: {
-      type: String,
-      required: true
-    },
-    rating: {
-      type: Number,
-      required: true
-    },
-    date_updated: {
-      type: Date,
-      default: Date.now
-    },
-    tags: {
-      type: [String],
-      default: []
-    },
-    numUp: {
-      type: Number,
-      required: true
-    },
-    numDown: {
-      type: Number,
-      required: true
-    }
+  description: {
+    type: String,
+    required: true,
+  },
+  rating: {
+    type: Number,
+    required: true,
+  },
+  tags: {
+    type: [String],
+    default: [],
+  },
+  numUp: {
+    type: Number,
+    default: 0,
+    required: true,
+  },
+  numDown: {
+    type: Number,
+    default: 0,
+    required: true,
+  },
+  dateUpdated: {
+    type: Date,
+    default: Date.now,
+  },
+//   author: {
+//     type: UserSchema
+//   },
 });
-  
+
 const HackathonSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   description: {
     type: String,
-    required: true
+    required: true,
   },
   reviews: {
     type: [ReviewSchema],
-    default: []
-  }, 
+    default: [],
+  },
   url: {
     type: String,
-    default: ""
+    default: "",
   },
   themes: {
     type: [String],
-    default: []
+    default: [],
   },
-  date_updated: {
+  dateAdded: {
+    type: Date,
+  },
+  dateUpdated: {
     type: Date,
     default: Date.now
   },
+  // author: {
+  //   type: UserSchema,
+  // },
 });
 
-module.exports = Hackathon = mongoose.model('hackathon', HackathonSchema);
+module.exports.HackathonSchema = HackathonSchema;
+module.exports = Hackathon = mongoose.model("hackathon", HackathonSchema);
